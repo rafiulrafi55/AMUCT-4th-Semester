@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Change Image</button>
+    <img src="img/img01.jpg" alt="" id="image">
+</body>
+<script>
+    const button = document.getElementById("btn");
+    const image = document.getElementById("image");
+    button.addEventListener("click", function() {
+        if (image.src.endsWith("img01.jpg")) {
+            image.src = "img/img02.jpg";
+        } else {
+            image.src = "img/img01.jpg";
+        }
+        
+    });
+
+</script>
+</html>

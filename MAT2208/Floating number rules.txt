@@ -1,0 +1,13 @@
+if we are asked to keep only four digits, and there is a 5 to the last digit
+there are 3 rules for that
+
+4.16517
+
+
+4.165151
+if a number after 5, we have to add 1
+
+4.16525
+if there is no number and previous number is even
+
+4.16515

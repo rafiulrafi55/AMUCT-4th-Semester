@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="heading">Hello, World!</h1>
+    <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing 
+        elit. Iusto consequuntur nisi beatae dolor autem consequatur 
+        atque cumque omnis, ut odio porro? Sit corporis nobis eum.
+         Obcaecati similique dolore quas corrupti!</p>
+    <button onclick="changeHeading()">Only text change</button>
+    <button onclick="changeParagraph()">HTML Change</button>
+
+    <form name="calculator" action="" method="post" id="calculator" onsubmit="calculate(event)">
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <input type="text" id="operator" placeholder="Enter operator +/-">
+        <button type="submit">Calculate</button>
+    </form>
+    <p id="result"></p>
+    <script src="script.js" defer></script>
+</body>
+</html>

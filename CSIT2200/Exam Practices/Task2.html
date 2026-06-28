@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Toggle Paragraph</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			padding: 20px;
+		}
+
+		#message {
+			margin-top: 12px;
+		}
+	</style>
+</head>
+<body>
+	<button id="toggleBtn" type="button">Hide Paragraph</button>
+
+	<p id="message">This is the paragraph that can be toggled</p>
+
+	<script>
+		const toggleBtn = document.getElementById("toggleBtn");
+        const message = document.getElementById("message");
+        toggleBtn.addEventListener("click", function() {
+            const isHidden = message.style.display == "none";
+            message.style.display = isHidden ? "block" : "none";
+            toggleBtn.textContent = isHidden ? "Hide Paragraph" : "Show Paragraph";
+        });
+	</script>
+</body>
+</html>

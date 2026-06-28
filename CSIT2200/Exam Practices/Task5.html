@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputField" placeholder="Type something...">
+    <p id="display"></p>
+    <button id="btn">Add</button>
+    <button id="clearBtn">Clear</button>
+
+    <input type="text" id="deleteField" placeholder="Type item name to delete...">
+    <button id="deleteBtn">Delete</button>
+    
+</body>
+<script>
+    const inputField = document.getElementById("inputField");
+    const display = document.getElementById("display");
+    const btn = document.getElementById("btn");
+    const clearBtn = document.getElementById("clearBtn");
+    const deleteField = document.getElementById("deleteField");
+    const deleteBtn = document.getElementById("deleteBtn");
+    let itemList = [];
+
+    btn.addEventListener("click", function() {
+        const inputValue = inputField.value.trim();
+        if (inputValue) {
+            itemList.push(inputValue);
+            display.textContent = itemList.join(", ");
+            inputField.value = "";
+        }
+    
+        
+    });
+
+    clearBtn.addEventListener("click", function() {
+        itemList = [];
+        display.textContent = "";
+    });
+
+    deleteBtn.addEventListener("click", function() {
+        const itemToDelete = deleteField.value.trim();
+        if (itemToDelete) {
+            itemList = itemList.filter(item => item !== itemToDelete);
+            display.textContent = itemList.join(", ");
+            deleteField.value = "";
+        }
+    });
+</script>
+</html>

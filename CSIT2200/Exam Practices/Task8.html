@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="submit">
+        <input type="email" name="email" placeholder="Input Email" required>
+        <input type="text" name="name" placeholder="Input Name" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+<script>
+    const form = document.querySelector("form");
+    const emailInput = form.elements.email;
+    const nameInput = form.elements.name;
+
+    form.addEventListener("submit", function (event) {
+        const email = emailInput.value.trim();
+        const name = nameInput.value.trim();
+
+        const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        const nameIsValid = /^[A-Za-z][A-Za-z\s'-]{1,49}$/.test(name);
+
+        if (!emailIsValid || !nameIsValid) {
+            event.preventDefault();
+
+            if (!nameIsValid) {
+                alert("Please enter a valid name (letters, spaces, apostrophes, or hyphens only).");
+                nameInput.focus();
+                return;
+            }
+
+            alert("Please enter a valid email address.");
+            emailInput.focus();
+        }
+    });
+</script>
+</html>

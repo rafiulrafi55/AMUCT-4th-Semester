@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My title</title>
+
+    <style>
+      .paragraph1 {
+        color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="app-name">App Name</h1>
+    <p id="paragraph1" class="paragraph1">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+      dolore, sequi expedita fuga necessitatibus veniam repudiandae amet eum
+      sapiente vitae, ea, quidem repellat culpa corporis nisi consequatur
+      adipisci esse illo?
+    </p>
+    <p id="date"></p>
+    <button onclick="changeContent()">Change text</button>
+    <button onclick="changeCSS()">Change CSS</button>
+
+    <script>
+      const appName = document.getElementById("app-name");
+      const paragraph1 = document.getElementById("paragraph1");
+      const date = document.getElementById("date");
+      function changeContent() {
+        appName.textContent = "New App Name";
+        paragraph1.textContent = "This is the new content for the paragraph.";
+        date.innerHTML = `Current Date and Time: ${new Date().toLocaleString()}`;
+      }
+      function changeCSS() {
+        paragraph1.style.color = "red";
+        paragraph1.style.fontWeight = "bold";
+      }
+    </script>
+  </body>
+</html>
